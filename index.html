@@ -3,24 +3,38 @@
     <head>
         <meta charset="utf-8">
         <title>Softuni Angular Project </title>
-
+        <!-- Begin Dependances -->
         <script src="node_modules/angular/angular.js"></script>
         <script src="node_modules/angular-route/angular-route.js"></script>
         <script src="node_modules/angular-resource/angular-resource.js"></script>
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- End Dependances -->
+
+        <!-- Begin Modules -->
         <script src="js/app.js"></script>
+
+        <script src="js/services/data/townsFactory.js"></script>
+        <script src="js/services/data/categoriesFactory.js"></script>
+        <script src="js/services/data/classifiedsFactory.js"></script>
         <script src="js/controllers/homeCtrl.js"></script>
         <script src="js/controllers/loginCtrl.js"></script>
         <script src="js/controllers/registerCtrl.js"></script>
         <script src="js/directives/topbar.js"></script>
-        <link rel="stylesheet" href="styles/style.css">
+        <script src="js/directives/classifieds.js"></script>
+        <script src="js/directives/categories.js"></script>
+        <script src="js/directives/towns.js"></script>
+        <!-- End Modules -->
+
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/style.css"> 
+        <base href="/"></base>
     </head>
-    <body >
+    <body>
     <top-bar></top-bar>
-        <ng-view> </ng-view>
-        <footer>Footer.txt</footer>
+        <div id="currentView">
+            <ng-view> </ng-view>
+        </div>
+        <footer class="col-md-12">Footer.txt</footer>
     </body>
 </html>

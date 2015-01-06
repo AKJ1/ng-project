@@ -1,0 +1,31 @@
+<div class="classifieds">
+	<div class="classified" ng-repeat="classified in classifieds.ads">
+		<div class="classified-top-bar">
+			<span class="classified-id">
+				<span class="smalltext">Ad #</span>{{classified.id}}
+			</span>
+				
+				<span class="classified-title">
+					{{classified.title}} <span class="smalltext">in</span> {{categories[(classified.categoryId-1)].name}}
+				</span>
+
+			<span class="classified-date">
+				<span class="smalltext">posted at</span> {{classified.date | date: 'hh:mm, dd-MMM-yy'}}
+			</span>
+		</div>
+		<div class="classified-body">
+			<img class="classified-image" src="{{classified.imageDataUrl}}">
+			<span class="classified-text"> {{classified.text}}</span>
+		</div>
+		<div class="classified-contact">
+			<span class="classified-phone"><span class="glyphicon glyphicon-earphone">{{classified.ownerPhone}}</span></span>
+			<span class="classified-email"><span class="glyphicon glyphicon-envelope">{{classified.ownerEmail}}</span></span>
+			<span class="classified-user"><span class="glyphicon glyphicon-user">{{classified.ownerName}}</span></span>
+		</div>
+	</div>
+	
+	<div class="navigation">
+		<button ng-click="nextPage()">Next Page</button>
+		<button ng-click="prevPage()">Previous Page</button>
+	</div>
+</div>

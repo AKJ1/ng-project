@@ -1,11 +1,15 @@
-<div>
-	<header class="topbar">
-		<h3 class="topbar">{{pageTitle}}</h3>
+<div class="topbar col-md-12">
+	<header>
+		<h3>{{pageTitle}}</h3>
 	</header>
-	<ul class="topbar">
-		<a href="#/"><button>Home</button></a>
-		<a href="#/login"><button>Login</button></a>
-		<a href="#/register"><button>Register</button></a>
-		<a href="#/user/logout"><button>Logout</button></a>
-	</ul>
+	<div class="topbar-actions">
+		<a href="/#/"><button>Browse</button></a>
+		<a href="/#/"><button>Post an Ad</button></a>
+		<a href="/#/"><button>View your Ads</button></a>
+	</div>
+	<div class="welcometext pull-right">
+		<p>
+		Welcome <span ng-if="loggedUser.name">{{loggedUser.name}} , <a href="/#/user/logout">Logout</a>?</span><span ng-if="!loggedUser.name">Guest, please <a href="/#/login">Login</a> or <a href="/#/register">Register</a></span>, 
+		</p>
+	</div>
 </div>

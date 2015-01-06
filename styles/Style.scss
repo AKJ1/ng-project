@@ -1,0 +1,147 @@
+
+body{
+	font-family: "Open Sans", "SegoeUI", "Roboto", verdana, helvetica, sans-serif;
+	footer{
+		text-align: center;
+		font-size: smaller;
+	}
+	nav {
+		width: 100%;
+	}
+	.topbar {
+		box-sizing: border-box;
+		background-color: #454555;
+		color: #fff;
+		margin-bottom: 10px;
+		height: 50px;
+
+		header{
+			height: 100%;
+			display: inline;
+			h3{
+				display: inline;
+				height: 100%;
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+		}
+		.topbar-actions{			
+			height: 100%;
+			display: inline;
+			a button{
+				background-color: inherit;
+				height: 100%;
+				border:none;
+				color:#A7FC00;
+				font-weight: bold;
+			}
+			a button:hover{
+				background-color: #606075;
+				color: white;
+				font-weight: bolder;
+			}
+		}
+		*{
+			// display: inline;
+		}
+		.welcometext {
+			float: right;
+			line-height: 50px;
+			height: 100%;
+			display: inline;
+			vertical-align: middle;	
+			color: #aaa;
+			span a{
+				display: inline;
+				height: 100%;
+				color: #A7FC00;
+				font-weight: bolder;
+			}
+			// Green: #A7FC00
+			// Red : #FF355E;
+		}
+	}
+	#currentView{
+		min-height: 100%;
+		.categories, .towns{
+			margin-bottom: 30px;
+			.category-button, .town-button{
+				-moz-transition: all 0.1s ease-in;
+				-webkit-transition: all 0.1s ease-in;
+				transition: all 0.1s ease-in;
+				width: 80%;
+				min-height: 30px;
+				border: none;
+				color: #779;
+				font-size: larger;
+				text-align: left;
+				background-color: white;
+				font-weight: bold;
+				margin-right: 10%;
+			}
+			.category-button:hover, .town-button:hover{
+				border: 1px solid black;
+				-moz-transition: all 0.1s ease-in;
+				-webkit-transition: all 0.1s ease-in;
+				transition: all 0.1s ease-in;
+				width: 90%;
+				margin-left:5%;
+				color: black;
+				font-weight:bolder;
+				background-color: #A7FC00;
+			}
+		}
+		.classifieds{
+			.classified{
+				width: 95%;
+				height: 300px;
+				.smalltext{
+					font-size: smaller;
+				}
+				.classified-top-bar{
+					span{
+						width: 32.7%;
+					}
+					.classified-title{
+						text-align: center;
+					}
+					.classified-date{
+						text-align: right;
+					}
+					height: 10%;
+					background-color: #72A0C1;
+				}
+				.classified-body{
+					height: 80%;
+				}
+				.classified-contact{
+					height: 10%;
+
+					.classified-user{
+						text-align: right;
+					}
+					.classified-email{
+						text-align: center;
+					}
+					span{
+						width: 32.7%;
+					}
+				}
+				div{
+					width: 100%;
+					img{
+						float:right;
+						height: 200px;
+						max-width: 400px;
+					}
+					.classified-date{
+						float:right;
+					}
+					.classified-title{
+						text-align: center;
+					}
+				}
+			}	
+		}
+	}
+}
