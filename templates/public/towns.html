@@ -1,6 +1,6 @@
 <div class="towns">
-	<legend>Towns</legend>
-	<div class="town-button" ng-repeat="town in towns">
+	<legend>Towns <span class="smalltext red" ng-if="currentTown != 0" ng-click="changeTown(0)">[Clear filter]</span></legend>
+	<div class="town-button" ng-repeat="town in towns" ng-click="changeTown(town.id)">
 		{{town.name}}
 	</div>
 </div>

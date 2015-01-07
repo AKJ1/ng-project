@@ -65,6 +65,19 @@ body{
 		min-height: 100%;
 		.categories, .towns{
 			margin-bottom: 30px;
+			legend{
+				span:hover{
+					color: darkred;
+					cursor: pointer;
+				}
+				.smalltext{
+					font-size: 12px;
+					text-transform: lowercase;
+				}
+				.red{
+					color:red;
+				}
+			}
 			.category-button, .town-button{
 				-moz-transition: all 0.1s ease-in;
 				-webkit-transition: all 0.1s ease-in;
@@ -136,6 +149,7 @@ body{
 				}
 				.classified-contact{
 					text-align: center;
+					font-weight: bold;
 					background-color: #5D8AA8;
 					border: 2px solid black;
 					color:white;
@@ -171,6 +185,15 @@ body{
 					}
 				}
 			}	
+			.navigation{
+				button{
+					border: 1px solid black;
+				}
+				.next-button{
+					float:right;
+					margin-right: 5%;
+				}
+			}
 		}
 	}
 }

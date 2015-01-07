@@ -1,7 +1,7 @@
 <div class="categories">
-	<legend class="">Categories</legend>
+	<legend class="">Categories <span class="smalltext red" ng-if="currentCategory != 0" ng-click="changeCategory(0)">[Clear filter]</span></legend>
 	<div ng-repeat="category in categories">
-		<button class="category-button" type="button" ng-click='$scope.filterByCategory({{category.id}})'>
+		<button class="category-button" type="button" ng-click='changeCategory(category.id)'>
 			{{category.name}}
 		</button>
 	</div>
