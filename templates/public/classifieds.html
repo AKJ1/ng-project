@@ -6,7 +6,7 @@
 			</span>
 				
 				<span class="classified-title">
-					{{classified.title}} <span class="smalltext">in</span> {{categories[(classified.categoryId-1)].name}}
+					<strong>{{classified.title}}</strong> <br> <span class="smalltext">in {{categories[(classified.categoryId-1)].name}}</span>
 				</span>
 
 			<span class="classified-date">
@@ -18,9 +18,9 @@
 			<span class="classified-text"> {{classified.text}}</span>
 		</div>
 		<div class="classified-contact">
-			<span class="glyphicon glyphicon-earphone classified-phone"></span>{{classified.ownerPhone}}
-			<span class="glyphicon glyphicon-envelope classified-email"></span>{{classified.ownerEmail}}
-			<span class="glyphicon glyphicon-user classified-user"></span>{{classified.ownerName}}
+			<span class="glyphicon glyphicon-earphone classified-phone"></span><span class="contact-data">{{classified.ownerPhone}}</span>
+			<span class="glyphicon glyphicon-envelope classified-email"></span><span class="contact-data">{{classified.ownerEmail}}</span>
+			<span class="glyphicon glyphicon-user classified-user"></span><span class="contact-data">{{classified.ownerName}}</span>
 		</div>
 	</div>
 	

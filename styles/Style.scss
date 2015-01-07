@@ -93,14 +93,25 @@ body{
 		}
 		.classifieds{
 			.classified{
+				border: 1px solid black;
 				width: 95%;
-				height: 300px;
+				min-height: 300px;
+				max-height: 350px;
+				margin-bottom: 30px;
+				background-color: #f6f6f6;
 				.smalltext{
 					font-size: smaller;
 				}
 				.classified-top-bar{
+					color:white;
+					border: 2px solid black;
 					span{
-						height: 0px;
+						display: inline-block;
+					}
+					text-align: center;
+					.classified-id{
+						float : left;
+						text-align: left;
 					}
 					.classified-title{
 						text-align: center;
@@ -109,13 +120,29 @@ body{
 					.classified-date{
 						text-align: right;
 					}
-					height: 10%;
 					background-color: #72A0C1;
 				}
 				.classified-body{
+					overflow:auto;
 					height: 80%;
+					.classified-text{	
+						display: block;
+						padding: 10px;
+					}
+					.classified-image{
+						margin: 15px;
+						border: 1px solid black;
+					}
 				}
 				.classified-contact{
+					text-align: center;
+					background-color: #5D8AA8;
+					border: 2px solid black;
+					color:white;
+					.contact-data{
+						margin-left: 2%;
+						margin-right: 2%;
+					}
 					height: 10%;
 					font-family: helvetica,verdana,sans-serif;
 					.classified-user{
