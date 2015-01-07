@@ -1,7 +1,7 @@
 <div class="categories">
 	<legend class="">Categories</legend>
 	<div ng-repeat="category in categories">
-		<button class="category-button" type="button" ng-click="filterByCategory({{category.id}})">
+		<button class="category-button" type="button" ng-click='$scope.filterByCategory({{category.id}})'>
 			{{category.name}}
 		</button>
 	</div>

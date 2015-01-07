@@ -100,10 +100,11 @@ body{
 				}
 				.classified-top-bar{
 					span{
-						width: 32.7%;
+						height: 0px;
 					}
 					.classified-title{
 						text-align: center;
+						margin-left: auto;
 					}
 					.classified-date{
 						text-align: right;
@@ -116,15 +117,16 @@ body{
 				}
 				.classified-contact{
 					height: 10%;
-
+					font-family: helvetica,verdana,sans-serif;
 					.classified-user{
 						text-align: right;
 					}
 					.classified-email{
 						text-align: center;
 					}
-					span{
-						width: 32.7%;
+					span:after{
+						content: "";
+						width: 32%;
 					}
 				}
 				div{
