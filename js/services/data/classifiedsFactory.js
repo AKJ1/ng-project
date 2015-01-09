@@ -13,5 +13,9 @@ app.factory('ClassifiedsFactory', ['$resource', 'baseServiceUrl', function($reso
 		var resource = $resource(adsUrl + categoryFilter + townFilter + pageFilter + pageLengthFilter);
 		return resource.get();
 	};
+
+	factory.postAd = function(title, text, imageDataUrl, categoryId, townId){
+
+	};
 	return factory;
 }]);

@@ -1,15 +1,15 @@
-<div class="topbar col-md-12">
+<div class="topbar col-md-12" ng-controller="TopBarCtrl">
 	<header>
 		<h3>{{pageTitle}}</h3>
 	</header>
 	<div class="topbar-actions">
 		<a href="/#/"><button>Browse</button></a>
-		<a href="/#/"><button>Post an Ad</button></a>
-		<a href="/#/"><button>View your Ads</button></a>
+		<span ng-if="loggedUser"><a href="/#/"><button>Post an Ad</button></a></span>
+		<span ng-if="loggedUser"><a href="/#/"><button>View your Ads</button></a></span>
 	</div>
 	<div class="welcometext pull-right">
 		<p>
-		Welcome <span ng-if="loggedUser.name">{{loggedUser.name}} , <a href="/#/user/logout">Logout</a>?</span><span ng-if="!loggedUser.name">Guest, please <a href="/#/login">Login</a> or <a href="/#/register">Register</a></span>, 
+		Welcome, <span ng-if="loggedUser"><strong>{{loggedUser}}</strong> <a ng-click="logout()">Logout</a> ?</span><span ng-if="!loggedUser">Guest, please <a href="/#/login">Login</a> or <a href="/#/register">Register</a></span>, 
 		</p>
 	</div>
 </div>
