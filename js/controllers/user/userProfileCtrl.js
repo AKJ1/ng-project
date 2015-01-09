@@ -11,8 +11,6 @@ app.controller('userProfileCtrl', ['$scope', 'UserActionsFactory', 'TownsFactory
 			$scope.phone = currentUserProfile.phoneNumber;
 			$scope.selected = {'id': currentUserProfile.townId};
 			console.log($scope.selected);
-
-			return data.data;
 		});
 	};
 

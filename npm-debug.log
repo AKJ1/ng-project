@@ -2,11 +2,11 @@
 1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'install',
-1 verbose cli   'angularFilterProvider' ]
+1 verbose cli   'angular-base64' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 verbose cache add [ 'angularFilterProvider', null ]
-5 verbose cache add name=undefined spec="angularFilterProvider" args=["angularFilterProvider",null]
+4 verbose cache add [ 'angular-base64', null ]
+5 verbose cache add name=undefined spec="angular-base64" args=["angular-base64",null]
 6 verbose parsed url { protocol: null,
 6 verbose parsed url   slashes: null,
 6 verbose parsed url   auth: null,
@@ -16,29 +16,29 @@
 6 verbose parsed url   hash: null,
 6 verbose parsed url   search: null,
 6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'angularFilterProvider',
-6 verbose parsed url   path: 'angularFilterProvider',
-6 verbose parsed url   href: 'angularFilterProvider' }
-7 silly lockFile e02533e7-angularFilterProvider angularFilterProvider
-8 verbose lock angularFilterProvider C:\Users\Ace\AppData\Roaming\npm-cache\e02533e7-angularFilterProvider.lock
-9 silly lockFile e02533e7-angularFilterProvider angularFilterProvider
-10 silly lockFile e02533e7-angularFilterProvider angularFilterProvider
-11 verbose addNamed [ 'angularFilterProvider', '' ]
+6 verbose parsed url   pathname: 'angular-base64',
+6 verbose parsed url   path: 'angular-base64',
+6 verbose parsed url   href: 'angular-base64' }
+7 silly lockFile 19f16584-angular-base64 angular-base64
+8 verbose lock angular-base64 C:\Users\Ace\AppData\Roaming\npm-cache\19f16584-angular-base64.lock
+9 silly lockFile 19f16584-angular-base64 angular-base64
+10 silly lockFile 19f16584-angular-base64 angular-base64
+11 verbose addNamed [ 'angular-base64', '' ]
 12 verbose addNamed [ null, '*' ]
-13 silly lockFile 412610f6-angularFilterProvider angularFilterProvider@
-14 verbose lock angularFilterProvider@ C:\Users\Ace\AppData\Roaming\npm-cache\412610f6-angularFilterProvider.lock
-15 silly addNameRange { name: 'angularFilterProvider', range: '*', hasData: false }
-16 verbose request where is /angularFilterProvider
+13 silly lockFile db4c9670-angular-base64 angular-base64@
+14 verbose lock angular-base64@ C:\Users\Ace\AppData\Roaming\npm-cache\db4c9670-angular-base64.lock
+15 silly addNameRange { name: 'angular-base64', range: '*', hasData: false }
+16 verbose request where is /angular-base64
 17 verbose request registry https://registry.npmjs.org/
-18 verbose request id 46c39523e3ecc91c
-19 verbose url raw /angularFilterProvider
-20 verbose url resolving [ 'https://registry.npmjs.org/', './angularFilterProvider' ]
-21 verbose url resolved https://registry.npmjs.org/angularFilterProvider
-22 verbose request where is https://registry.npmjs.org/angularFilterProvider
-23 info trying registry request attempt 1 at 23:25:01
-24 http GET https://registry.npmjs.org/angularFilterProvider
-25 http 404 https://registry.npmjs.org/angularFilterProvider
-26 verbose headers { date: 'Tue, 06 Jan 2015 21:24:57 GMT',
+18 verbose request id 67157308f0502e61
+19 verbose url raw /angular-base64
+20 verbose url resolving [ 'https://registry.npmjs.org/', './angular-base64' ]
+21 verbose url resolved https://registry.npmjs.org/angular-base64
+22 verbose request where is https://registry.npmjs.org/angular-base64
+23 info trying registry request attempt 1 at 00:36:05
+24 http GET https://registry.npmjs.org/angular-base64
+25 http 404 https://registry.npmjs.org/angular-base64
+26 verbose headers { date: 'Fri, 09 Jan 2015 22:36:04 GMT',
 26 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
 26 verbose headers   'content-type': 'application/json',
 26 verbose headers   'cache-control': 'max-age=0',
@@ -46,14 +46,14 @@
 26 verbose headers   'accept-ranges': 'bytes',
 26 verbose headers   via: '1.1 varnish',
 26 verbose headers   age: '0',
-26 verbose headers   'x-served-by': 'cache-fra1243-FRA',
+26 verbose headers   'x-served-by': 'cache-ams4151-AMS',
 26 verbose headers   'x-cache': 'MISS',
 26 verbose headers   'x-cache-hits': '0',
-26 verbose headers   'x-timer': 'S1420579496.428736,VS0,VE728',
+26 verbose headers   'x-timer': 'S1420842964.543793,VS0,VE389',
 26 verbose headers   'keep-alive': 'timeout=10, max=50',
 26 verbose headers   connection: 'Keep-Alive' }
 27 silly registry.get cb [ 404,
-27 silly registry.get   { date: 'Tue, 06 Jan 2015 21:24:57 GMT',
+27 silly registry.get   { date: 'Fri, 09 Jan 2015 22:36:04 GMT',
 27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
 27 silly registry.get     'content-type': 'application/json',
 27 silly registry.get     'cache-control': 'max-age=0',
@@ -61,24 +61,24 @@
 27 silly registry.get     'accept-ranges': 'bytes',
 27 silly registry.get     via: '1.1 varnish',
 27 silly registry.get     age: '0',
-27 silly registry.get     'x-served-by': 'cache-fra1243-FRA',
+27 silly registry.get     'x-served-by': 'cache-ams4151-AMS',
 27 silly registry.get     'x-cache': 'MISS',
 27 silly registry.get     'x-cache-hits': '0',
-27 silly registry.get     'x-timer': 'S1420579496.428736,VS0,VE728',
+27 silly registry.get     'x-timer': 'S1420842964.543793,VS0,VE389',
 27 silly registry.get     'keep-alive': 'timeout=10, max=50',
 27 silly registry.get     connection: 'Keep-Alive' } ]
-28 silly lockFile 412610f6-angularFilterProvider angularFilterProvider@
-29 silly lockFile 412610f6-angularFilterProvider angularFilterProvider@
-30 error 404 404 Not Found: angularFilterProvider
+28 silly lockFile db4c9670-angular-base64 angular-base64@
+29 silly lockFile db4c9670-angular-base64 angular-base64@
+30 error 404 404 Not Found: angular-base64
 30 error 404
-30 error 404 'angularFilterProvider' is not in the npm registry.
+30 error 404 'angular-base64' is not in the npm registry.
 30 error 404 You should bug the author to publish it
 30 error 404
 30 error 404 Note that you can also install from a
 30 error 404 tarball, folder, or http url, or git url.
 31 error System Windows_NT 6.2.9200
-32 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angularFilterProvider"
-33 error cwd d:\Code\Softuni\SoftuniAngular\ng-project
+32 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-base64"
+33 error cwd d:\code\softuni\SoftuniANgular\ng-project
 34 error node -v v0.10.33
 35 error npm -v 1.4.28
 36 error code E404

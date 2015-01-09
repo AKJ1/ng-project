@@ -1,4 +1,4 @@
-app.controller('updateUserCtrl', ['$scope', 'UserActionsFactory', 'TownsFactory', function ($scope, UserActionsFactory, TownsFactory) {
+app.controller('userAdsCtrl', ['$scope', 'UserActionsFactory', 'TownsFactory', function ($scope, UserActionsFactory, TownsFactory) {
 	
 	$scope.currentUserProfile = $scope.getUserProfile();
 	

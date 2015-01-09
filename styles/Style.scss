@@ -61,7 +61,14 @@ body{
 			// Red : #FF355E;
 		}
 	}
+	
 	#currentView{
+		.classified-editor{
+			img{
+				max-width: 60%;
+				max-height: 300px;
+			}
+		}
 		min-height: 100%;
 		.categories, .towns{
 			margin-bottom: 30px;

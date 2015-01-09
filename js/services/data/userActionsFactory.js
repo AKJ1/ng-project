@@ -53,8 +53,10 @@ app.factory('UserActionsFactory', ['baseServiceUrl','$http',function (baseServic
 			return(data);
 		});
 	};
-	factory.newUserAd = function(title,text,imageDataUrl,categoryId,townId,classifiedId){
+	factory.newUserAd = function(callback, title, text, categoryId, townId, imageDataUrl){
 		var requestObject = {
+			method: "POST",
+			url: baseServiceUrl + 'user/ads/',
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
@@ -66,9 +68,9 @@ app.factory('UserActionsFactory', ['baseServiceUrl','$http',function (baseServic
 				'townId': townId
 			}
 		};
-		$http.post(baseServiceUrl + 'user/ads/' + classifiedId, requestObject)
+		$http(requestObject)
 		.then(function(data){
-			return(data);
+			return callback(data);
 		});
 	};
 	factory.getAdById = function(classifiedId){
