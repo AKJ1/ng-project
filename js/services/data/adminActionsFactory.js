@@ -1,0 +1,4 @@
+app.factory('AdminActionsFactory', [function () {
+	
+
+}])

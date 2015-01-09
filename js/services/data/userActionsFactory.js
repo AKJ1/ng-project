@@ -1,4 +1,4 @@
-app.factory('userActionFactory', ['baseServiceUrl','$http',function ($http) {
+app.factory('UserActionsFactory', ['baseServiceUrl','$http',function (baseServiceUrl, $http) {
 	var factory = {};
 
 	factory.getUserAds = function(){
@@ -93,19 +93,20 @@ app.factory('userActionFactory', ['baseServiceUrl','$http',function ($http) {
 			return(data);
 		});
 	};
-	factory.getUserProfile = function(){
+	factory.getUserProfile = function(callback){
 		var requestObject = {
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			}
 		};
-		$http.get(baseServiceUrl + 'user/profile', requestObject)
-		.then(function(data){
-			return(data);
+		$http.get(baseServiceUrl + 'user/profile', requestObject).then(function(response){
+			return callback(response);
 		});
 	};
-	factory.editUserProfile = function(name, email, phonenumber, townid){
+	factory.editUserProfile = function(callback, name, email, phonenumber, townid){
 		var requestObject = {
+			url: baseServiceUrl + 'user/profile',
+			method: 'PUT',
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
@@ -116,25 +117,27 @@ app.factory('userActionFactory', ['baseServiceUrl','$http',function ($http) {
 				'townid': townid
 			}
 		};
-		$http.put(baseServiceUrl + 'user/profile', requestObject)
+		$http(requestObject)
 		.then(function(data){
-			return(data);
+			return callback(data);
 		});
 	};
-	factory.changeUserPassword = function(oldpass, newpass, repeatNewpass){
+	factory.changeUserPassword = function(callback, oldpass, newpass, repeatNewpass){
 		var requestObject = {
+			url: baseServiceUrl + 'user/changepassword',
+			method: 'PUT',
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
 			data:{
 				'oldPassword': oldpass,
 				'newPassword': newpass,
-				'confirmPassword': repeatNewpass
+				'confirmPassword': repeatNewpass,
 			}
 		};
-		$http.put(baseServiceUrl + 'user/profile', requestObject)
+		$http(requestObject)
 		.then(function(data){
-			return(data);
+			return callback(data);
 		});
 	};
 

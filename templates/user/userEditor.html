@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <form class="form-horizontal col-lg-6 col-lg-offset-3">
+      <fieldset>
+        <legend>Edit Profile</legend>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-1">
+            <label for="">Name<span class="smalltext red">*</span></label>
+            <input ng-model="uname" type="text" class="form-control" id="inputName" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-1">
+            <label for="">Email<span class="smalltext red">*</span></label>
+            <input ng-model="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-1">
+            <label for="">Phone<span class="smalltext red">*</span></label>
+            <input ng-model="phone" type="text" class="form-control" id="inputPhone" placeholder="Phone">
+          </div>
+        </div>       
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-1">
+            <label for="">Town</label>
+            <select class="form-control" ng-init="getTowns()" ng-options="town.name for town in towns track by town.id" ng-model="selected">
+            </select>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-1">
+            <button type="submit" ng-click="updateProfile()" class="btn btn-primary">Save Changes</button>
+            <button type="home" class="btn btn-danger">Cancel</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  <form class="form-horizontal col-lg-6 col-lg-offset-3">
+    <legend>Edit Password</legend>
+    <fieldset>
+      <div class="form-group">        
+        <div class="col-lg-10 col-lg-offset-1">
+        <label for="">Old Password<span class="smalltext red">*</span></label>
+          <input ng-model="oldPass" type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="form-group">        
+        <div class="col-lg-10 col-lg-offset-1">
+        <label for="">Password<span class="smalltext red">*</span></label>
+          <input ng-model="newPass" type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+
+       <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-1">
+          <label for="">Repeat Password</label>
+          <input ng-model="newPassRepeat" type="password" class="form-control" id="inputPassword" placeholder="Repeat Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-1">
+          <button type="submit" ng-click="updatePassword()" class="btn btn-primary">Change Password</button>
+          <button type="home" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
