@@ -1,4 +1,4 @@
-app.controller('registerCtrl', ['$scope','TownsFactory', function ($scope, TownsFactory) {
+app.controller('registerCtrl', ['$scope','TownsFactory', 'AuthenticateService', function ($scope, TownsFactory, AuthenticateService) {
 	$scope.pageTitle = "Register";
 	$scope.getTowns = function(){
 		TownsFactory.getTowns()
@@ -12,6 +12,6 @@ app.controller('registerCtrl', ['$scope','TownsFactory', function ($scope, Towns
 	};
 
 	$scope.register = function(){
-
+		AuthenticateService.registerUser($scope.user,$scope.pass, $scope.passTwo, $scope.uname, $scope.email, $scope.phone, $scope.townId);
 	};
 }]);

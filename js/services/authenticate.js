@@ -21,6 +21,17 @@ app.service('AuthenticateService', ['$http', '$rootScope', 'baseServiceUrl', fun
 		$rootScope.$broadcast('AuthenticationUser', {key: 'user', newvalue: sessionStorage.username});
 		$rootScope.$broadcast('AuthenticationToken', {key: 'token', newvalue: sessionStorage.loginToken});
 	};
-	var self = this;
+	
+	this.registerUser = function(user, pass, passTwo, name, email, phone, townId){
+		var registerReq = { "username": user, "password": pass, "confirmPassword": passTwo, "name": name, "email": email, "phone":phone, "townId": townId };
+		resource = $http.post(baseServiceUrl + "user/register", registerReq)
+		.then(function(response){
+			console.log(response);
+			sessionStorage.loginToken = response.data.access_token;
+			sessionStorage.username = response.data.username;
+			self.broadcastUser();
+		});
+	};
 
+	var self = this;
 }]);
