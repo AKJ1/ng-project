@@ -6,25 +6,25 @@
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
             <label for="">Title<span class="smalltext red">*</span></label>
-            <input ng-model="title" type="text" class="form-control" id="inputName" placeholder="Name">
+            <input ng-model="classified.title" type="text" class="form-control" id="inputName" placeholder="Name">
           </div>
         </div>
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
             <label for="">Text<span class="smalltext red">*</span></label>
-            <textarea rows="8" ng-model="text" class="form-control" id="inputEmail" placeholder="Extra Info"></textarea>
+            <textarea rows="8" ng-model="classified.text" class="form-control" id="inputEmail" placeholder="Extra Info"></textarea>
           </div>
         </div>
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
             <label for="">Category<span class="smalltext red">*</span></label>
-            <select ng-model="categorySelect" class="form-control"  ng-options="category.name for category in categories track by category.id"></select>
+            <select ng-model="classified.categorySelect" class="form-control"  ng-options="category.name for category in categories track by category.id"></select>
           </div>
         </div>   
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
             <label for="">Town</label>
-              <select ng-model="townSelect" class="form-control"  ng-options="town.name for town in towns track by town.id"></select>
+              <select ng-model="classified.townSelect" class="form-control"  ng-options="town.name for town in towns track by town.id"></select>
             <br>
           </div>
         </div>

@@ -36,7 +36,7 @@ app.controller('userAdsCtrl', ['$scope', 'UserActionsFactory', 'TownsFactory', '
 		reader.readAsDataURL(changed.files[0]);
 	};
 
-	
+
 	$scope.getUserAds = function(){
 		UserActionsFactory.getUserAds(function(data){
 			console.log(data);
@@ -74,11 +74,13 @@ app.controller('userAdsCtrl', ['$scope', 'UserActionsFactory', 'TownsFactory', '
 		classified.editor = true;
 		
 	};
-	
-	$scope.publishAd = function(){
+	$scope.check = function(){
+		alert(classified.searchText);
+	}
+	$scope.commitChanges = function(classified){
 		UserActionsFactory.editUserAd(function(result){
 			console.log(result);
-		}, $scope.title, $scope.text, $scope.categorySelect.id, $scope.townSelect.id, $scope.image);
+		}, classified.title, classified.text, classified.categorySelect.id, classified.townSelect.id, ($scope.image!==null||$scope.image!==undefined), $scope.image, classified.id);
 	};
 
 	$scope.getUserProfile();

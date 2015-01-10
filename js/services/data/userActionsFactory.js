@@ -55,7 +55,7 @@ app.factory('UserActionsFactory', ['baseServiceUrl','$http',function (baseServic
 			return callback(data);
 		});
 	};
-	factory.editUserAd = function(callback, title,text,changeImage,imageDataUrl,categoryId,townId,classifiedId){
+	factory.editUserAd = function(callback,title,text,categoryId,townId,changeImage,imageDataUrl,classifiedId){
 		var requestObject = {
 			method: 'PUT',
 			url: baseServiceUrl + 'user/ads/' + classifiedId,
