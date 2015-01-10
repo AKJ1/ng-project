@@ -1,41 +1,65 @@
 app.factory('UserActionsFactory', ['baseServiceUrl','$http',function (baseServiceUrl, $http) {
 	var factory = {};
 
-	factory.getUserAds = function(){
+	factory.getUserAds = function(callback, page){
 		var requestObject = {
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
+			},
+			params: {
+				'pagesize': 6,
+				'startpage': page
 			}
 		};
 		$http.get(baseServiceUrl + "user/ads", requestObject)
 		.then(function(response){
-			return response;	
+			return callback(response);	
 		});
 	};
-	factory.deactivateUserAd = function(classifiedId){
+	factory.deactivateUserAd = function(callback, classifiedId){
 		var requestObject = {
+			method: 'PUT',
+			url: baseServiceUrl + 'user/ads/deactivate/' + classifiedId,
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			}
 		};
-		$http.put(baseServiceUrl + 'user/ads/deactivate/' + classifiedId, requestObject)
+		$http(requestObject)
 		.then(function(data){
-			return(data);
+			return callback(data);
 		});
 	};
-	factory.publishAgainUserAd = function(classifiedId){
+	factory.deleteUserAd = function(callback, classifiedId){
 		var requestObject = {
+			method: "DELETE",
+			url: baseServiceUrl + 'user/ads/' + classifiedId,
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			}
 		};
-		$http.put(baseServiceUrl + 'user/ads/publishagain/' + classifiedId, requestObject)
+		$http(requestObject)
 		.then(function(data){
-			return(data);
+			return callback(data);
 		});
 	};
-	factory.editUserAd = function(title,text,changeImage,imageDataUrl,categoryId,townId,classifiedId){
+	factory.reactivateUserAd = function(callback, classifiedId){
 		var requestObject = {
+			method: 'PUT',
+			url: baseServiceUrl + 'user/ads/publishagain/' + classifiedId,
+			headers: {
+				'Authorization': 'Bearer ' + sessionStorage.loginToken
+			}
+		};
+		$http(requestObject)
+		.then(function(data){
+			return callback(data);
+		});
+	};
+	factory.editUserAd = function(callback, title,text,changeImage,imageDataUrl,categoryId,townId,classifiedId){
+		var requestObject = {
+			method: 'PUT',
+			url: baseServiceUrl + 'user/ads/' + classifiedId,
+			
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
@@ -48,9 +72,9 @@ app.factory('UserActionsFactory', ['baseServiceUrl','$http',function (baseServic
 				'townId': townId
 			}
 		};
-		$http.put(baseServiceUrl + 'user/ads/' + classifiedId, requestObject)
+		$http(requestObject)
 		.then(function(data){
-			return(data);
+			return callback(data);
 		});
 	};
 	factory.newUserAd = function(callback, title, text, categoryId, townId, imageDataUrl){
@@ -84,17 +108,7 @@ app.factory('UserActionsFactory', ['baseServiceUrl','$http',function (baseServic
 			return(data);
 		});
 	};
-	factory.deleteUserAd = function(classifiedId){
-		var requestObject = {
-			headers: {
-				'Authorization': 'Bearer ' + sessionStorage.loginToken
-			}
-		};
-		$http.delete(baseServiceUrl + 'user/ads/' + classifiedId, requestObject)
-		.then(function(data){
-			return(data);
-		});
-	};
+	
 	factory.getUserProfile = function(callback){
 		var requestObject = {
 			headers: {

@@ -1,0 +1,39 @@
+<div class="classifieds">
+	<div class="classified" ng-repeat="classified in classifieds.ads">
+	<div ng-if="classified != null">
+		<div class="classified-top-bar">
+			<span class="classified-id">
+				<span class="smalltext">Ad #</span>{{classified.id}}
+			</span>
+				
+				<span class="classified-title">
+					<strong>{{classified.title}}</strong> <br> <span class="smalltext">in {{classified.categoryName}}</span>
+				</span>
+
+			<span class="classified-date">
+				<span class="smalltext">posted at</span> {{classified.date | date: 'hh:mm, dd-MMM-yy'}} <br><span class="smalltext">from {{classified.townName}}</span>
+			</span>
+		</div>
+		<div class="classified-body">
+			<img class="classified-image" ng-src="{{classified.imageDataUrl}}">
+			<span class="classified-text"> {{classified.text}}</span>
+		</div>
+		<div class="owner-actions">
+			<a href=""><button class="btn btn-danger" ng-click="deleteAd(classified)">Delete Ad</button></a>
+			<a href="" ng-if="classified.status != 'Inactive' " ng-click="deactivateAd(classified)"><button class="btn btn-warning">Deactivate Ad</button></a>
+			<a href="" ng-if="classified.status == 'Inactive'" ng-click="reactivateAd(classified)"><button class="btn btn-info">Publish</button></a>
+			<a href=""><button class="btn btn-info"  ng-click="editAd(classified)">Edit</button></a>
+			<div style="background-color: white; box-shadow: 0px 1px 10px;" ng-if="classified.editor">
+				<edit-ad-form></edit-ad-form>
+				<edit-ad-controls></edit-ad-controls>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<div class="navigation">
+		<button class="prev-button btn btn-normal" ng-if='classifieds && currentPage > 1 'ng-click="prevPage()">Previous Page</button>
+
+		<button class="next-button btn btn-normal" ng-if="classifieds && currentPage <= classifieds.numPages-1" ng-click="nextPage()">Next Page</button>
+	</div>
+</div>
