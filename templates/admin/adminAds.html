@@ -24,8 +24,8 @@
 		</div>
 		<div class="admin-actions" >
 			<a href=""><button class="btn btn-danger" ng-click="deleteAd(classified)">Delete Ad</button></a>
-			<a href="" ng-if="classified.status !== 'Inactive'" ng-click='rejectAd(classified)'><button class="btn btn-warning">Reject Ad</button></a>
-			<a href="" ng-if="classified.status !== 'Published'" ng-click="approveAd(classified)"><button class="btn btn-info">Publish</button></a>
+			<a href="" ng-if="classified.status != 'Rejected'" ng-click='rejectAd(classified)'><button class="btn btn-warning">Reject Ad</button></a>
+			<a href="" ng-if="classified.status != 'Published'" ng-click="approveAd(classified)"><button class="btn btn-info">Publish</button></a>
 			<a href=""><button class="btn btn-info"  ng-click="editAd(classified)">Edit</button></a>
 			<div id="owner-classified-editor" ng-if="classified.editor">
 				<edit-ad-form></edit-ad-form>

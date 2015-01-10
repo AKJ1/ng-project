@@ -1,0 +1,14 @@
+<div class="users-wrapper">
+	<div ng-repeat="user in users.users">
+		{{user.name}} - <button class="btn btn-normal" ng-click="editUser(user)">edit</button> or <button class="btn btn-normal" ng-click="deleteUser(user)">delete</button>
+		<div #owner-classified-editor>
+			
+		</div>
+	</div>
+
+	<div class="navigation">
+		<button class="prev-button btn btn-normal" ng-if='users && currentPage > 1 'ng-click="prevPage()">Previous Page</button>
+
+		<button class="next-button btn btn-normal" ng-if="users && currentPage <= classifieds.numPages-1" ng-click="nextPage()">Next Page</button>
+	</div>
+</div>

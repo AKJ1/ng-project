@@ -93,13 +93,17 @@ app.factory('AdminActionsFactory', ['baseServiceUrl','$http', function(baseServi
 			return callback(response);	
 		});
 	};
-	factory.getAllUsers = function(callback){
+	factory.getUsers = function(callback, pagenumber){
 		var requestObject = {
 			url: baseServiceUrl + "admin/users", 
 			method: "GET",
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
+			params: {
+				'startpage': pagenumber,
+				'pagesize': 20
+			}
 		};
 		$http(requestObject)
 		.then(function(response){

@@ -33,7 +33,7 @@ app.controller('adminAdCtrl', ['$scope', '$location', 'AdminActionsFactory','Tow
 				$scope.classifieds = response.data;
 			}, $scope.currentPage, $scope.currentStatus, $scope.currentCategoryId, $scope.currentTownId);
 	};	
-	$scope.states = ["Inactive", "WaitingApproval", "Published"];
+	$scope.states = ["Rejected", "WaitingApproval", "Published"];
 
 	$scope.approveAd = function(classified){
 		AdminActionsFactory.approveAd(function(response){
