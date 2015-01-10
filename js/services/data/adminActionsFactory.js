@@ -72,19 +72,28 @@ app.factory('AdminActionsFactory', [function () {
 			return callback(response);	
 		});
 	};
-	// factory.editAd = function(callback, classifiedId){
-	// 	var requestObject = {
-	// 		url: baseServiceUrl + "admin/ads/" + classifiedId, 
-	// 		method: "GET",
-	// 		headers: {
-	// 			'Authorization': 'Bearer ' + sessionStorage.loginToken
-	// 		},
-	// 	};
-	// 	$http(requestObject)
-	// 	.then(function(response){
-	// 		return callback(response);	
-	// 	});
-	// };
+	factory.editAd = function(callback,title,text,categoryId,townId,changeImage,imageDataUrl,classifiedId){
+		var requestObject = {
+			url: baseServiceUrl + "admin/ads/" + classifiedId, 
+			method: "PUT",
+			headers: {
+				'Authorization': 'Bearer ' + sessionStorage.loginToken
+			},
+			data:{
+				'title': title,
+				'text': text,
+				'changeimage': changeImage,
+				'ImageDataURL': imageDataUrl,
+				'categoryId': categoryId,
+				'townId': townId
+			}
+
+		};
+		$http(requestObject)
+		.then(function(response){
+			return callback(response);	
+		});
+	};
 	factory.getAllUsers = function(callback){
 		var requestObject = {
 			url: baseServiceUrl + "admin/users", 
