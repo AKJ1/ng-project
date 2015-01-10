@@ -23,13 +23,13 @@
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
             <label for="">Phone<span class="smalltext red">*</span></label>
-            <input ng-model="user.phone" type="text" class="form-control" id="inputPhone" placeholder="Phone">
+            <input ng-model="user.phoneNumber" type="text" class="form-control" id="inputPhone" placeholder="Phone">
           </div>
         </div>       
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
             <label for="">Town</label>
-            <select class="form-control" ng-init="getTowns()" ng-options="town.name for town in towns track by town.id" ng-model="user.town">
+            <select class="form-control" ng-init="getTowns()" ng-options="town.name for town in towns track by town.id" ng-model="user.townId">
             </select>
             <br>
           </div>
@@ -44,7 +44,7 @@
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
             <button type="submit" ng-click="commitChanges(user)" class="btn btn-primary">Save Changes</button>
-            <button type="home" class="btn btn-danger" ng-click="user.editform = false">Cancel</button>
+            <button type="home" class="btn btn-danger" ng-click="editUser(user)">Cancel</button>
           </div>
         </div>
       </fieldset>
@@ -68,7 +68,7 @@
       <div class="form-group">
         <div class="col-lg-10 col-lg-offset-1">
           <button type="submit" ng-click="changePassword(user)" class="btn btn-primary">Change Password</button>
-          <a href="/#/"><button type="home" class="btn btn-danger" ng-click="user.editform = false">Cancel</button></a>
+          <button type="home" class="btn btn-danger" ng-click="editUser(user)">Cancel</button>
         </div>
       </div>
     </fieldset>

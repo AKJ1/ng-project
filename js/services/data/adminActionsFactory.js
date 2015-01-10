@@ -112,7 +112,7 @@ app.factory('AdminActionsFactory', ['baseServiceUrl','$http', function(baseServi
 	};
 	factory.editUserProfile = function(callback, username, name, email, phonenumber, townid, isAdmin){
 		var requestObject = {
-			url: baseServiceUrl + 'admin/user' + username,
+			url: baseServiceUrl + 'admin/user/' + username,
 			method: 'PUT',
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken

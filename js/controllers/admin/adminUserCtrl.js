@@ -17,15 +17,21 @@ app.controller('adminUserCtrl', ['$scope', '$location', 'TownsFactory', 'AdminAc
 	$scope.deleteUser = function(user){
 		AdminActionsFactory.deleteUser(function(response){
 			console.log(response);
-		}, user.name);
+			$scope.filter();
+		}, user.username);
 	};
 	$scope.editUser = function(user){
-		user.editForm = true;
+		if (!user.editForm) {
+			user.editForm = true;
+		}else{
+			user.editForm = false;
+		}
+		$scope.editTarget = user.username;
 	};
 	$scope.commitChanges = function(user){
 		AdminActionsFactory.editUserProfile(function(){
 
-		}, user.username, user.name, user.email, user.phone, user.town, user.isAdmin);
+		}, $scope.editTarget, user.name, user.email, user.phoneNumber, user.town.id, user.isAdmin);
 	};
 	$scope.changePassword = function(user){
 		AdminActionsFactory.setUserPassword(function(){
