@@ -1,6 +1,5 @@
 <div class="classifieds">
 	<div class="classified" ng-repeat="classified in classifieds.ads">
-	<div ng-if="classified != null">
 		<div class="classified-top-bar">
 			<span class="classified-id">
 				<span class="smalltext">Ad #</span>{{classified.id}}
@@ -18,17 +17,21 @@
 			<img class="classified-image" ng-src="{{classified.imageDataUrl}}">
 			<span class="classified-text"> {{classified.text}}</span>
 		</div>
-		<div class="owner-actions" >
+		<div class="classified-contact">
+			<span class="glyphicon glyphicon-earphone classified-phone"></span><span class="contact-data">{{classified.ownerPhone}}</span>
+			<span class="glyphicon glyphicon-envelope classified-email"></span><span class="contact-data">{{classified.ownerEmail}}</span>
+			<span class="glyphicon glyphicon-user classified-user"></span><span class="contact-data">{{classified.ownerName}}</span>
+		</div>
+		<div class="admin-actions" >
 			<a href=""><button class="btn btn-danger" ng-click="deleteAd(classified)">Delete Ad</button></a>
-			<a href="" ng-if="classified.status != 'Inactive' " ng-click="approveAd(classified)"><button class="btn btn-warning">Deactivate Ad</button></a>
-			<a href="" ng-if="classified.status == 'Inactive'" ng-click="rejectAd(classified)"><button class="btn btn-info">Publish</button></a>
+			<a href="" ng-if="classified.status !== 'Inactive'" ng-click='rejectAd(classified)'><button class="btn btn-warning">Reject Ad</button></a>
+			<a href="" ng-if="classified.status !== 'Published'" ng-click="approveAd(classified)"><button class="btn btn-info">Publish</button></a>
 			<a href=""><button class="btn btn-info"  ng-click="editAd(classified)">Edit</button></a>
 			<div id="owner-classified-editor" ng-if="classified.editor">
 				<edit-ad-form></edit-ad-form>
 				<edit-ad-controls></edit-ad-controls>
 			</div>
 		</div>
-	</div>
 	</div>
 	
 	<div class="navigation">

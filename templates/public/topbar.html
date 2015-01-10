@@ -3,10 +3,13 @@
 		<h3>{{pageTitle}}</h3>
 	</header>
 	<div class="topbar-actions">
-		<a href="/#/"><button>Browse</button></a>
+		<a ng-href="{{browseLocation}}"><button>Browse</button></a>
 		<span ng-if="loggedUser"><a href="/#/user/ads/publish"><button>Post an Ad</button></a></span>
 		<span ng-if="loggedUser"><a href="/#/user/ads"><button>View your Ads</button></a></span>
 		<span ng-if="loggedUser"><a href="/#/user/profile"><button>Edit Profile</button></a></span>
+		<span ng-if="adminControls" class="admin-actions"><a href="/#/admin/categories"><button>ADMIN - Categories</button></a>
+		<a href="/#/admin/towns"><button>ADMIN - Towns</button></a>
+		<a href="/#/admin/users"><button>ADMIN - Users</button></a></span>
 
 	</div>
 	<div class="welcometext pull-right">

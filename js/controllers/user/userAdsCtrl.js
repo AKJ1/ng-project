@@ -76,11 +76,11 @@ app.controller('userAdsCtrl', ['$scope', 'UserActionsFactory', 'TownsFactory', '
 	};
 	$scope.check = function(){
 		alert(classified.searchText);
-	}
+	};
 	$scope.commitChanges = function(classified){
 		UserActionsFactory.editUserAd(function(result){
 			console.log(result);
-		}, classified.title, classified.text, classified.categorySelect.id, classified.townSelect.id, ($scope.image!==null||$scope.image!==undefined), $scope.image, classified.id);
+		}, classified.title, classified.text, classified.categorySelect.id, classified.townSelect.id, ($scope.image !== null && $scope.image !== undefined), $scope.image, classified.id);
 	};
 
 	$scope.getUserProfile();

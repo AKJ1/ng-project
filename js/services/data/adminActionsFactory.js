@@ -1,11 +1,11 @@
-app.factory('AdminActionsFactory', [function () {
+app.factory('AdminActionsFactory', ['baseServiceUrl','$http', function(baseServiceUrl, $http) {
 
 	var factory = {};
-	factory.getAdminAds = function(callback, page, status){
+	factory.getAdminAds = function(callback, page, status, category, town){
 		var requestObject = {
 
 			url: baseServiceUrl + "admin/ads", 
-			method: "POST",
+			method: "GET",
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
@@ -46,10 +46,10 @@ app.factory('AdminActionsFactory', [function () {
 			return callback(response);	
 		});
 	};
-	factory.getAdById = function(callback, classifiedId){
+	factory.deleteAd = function(callback, classifiedId){
 		var requestObject = {
 			url: baseServiceUrl + "admin/ads/" + classifiedId, 
-			method: "GET",
+			method: "DELETE",
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
@@ -62,7 +62,7 @@ app.factory('AdminActionsFactory', [function () {
 	factory.getAdById = function(callback, classifiedId){
 		var requestObject = {
 			url: baseServiceUrl + "admin/ads/" + classifiedId, 
-			method: "DELETE",
+			method: "GET",
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
 			},
@@ -87,7 +87,6 @@ app.factory('AdminActionsFactory', [function () {
 				'categoryId': categoryId,
 				'townId': townId
 			}
-
 		};
 		$http(requestObject)
 		.then(function(response){
@@ -213,11 +212,11 @@ app.factory('AdminActionsFactory', [function () {
 			}
 		};
 		$http(requestObject)
-		.then(function(data){
-			return callback(data);
+		.then(function(response){
+			return callback(response);
 		});
 	};
-	factory.getTowns = function(){
+	factory.getTowns = function(callback){
 	var requestObject = {
 			url: baseServiceUrl + 'admin/towns',
 			method: 'GET',
@@ -276,5 +275,6 @@ app.factory('AdminActionsFactory', [function () {
 		});
 	};
 
-	// SAme as user one - use the user one;
+	
+	return factory;
 }]);	
