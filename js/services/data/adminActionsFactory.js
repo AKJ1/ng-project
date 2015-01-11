@@ -168,6 +168,10 @@ app.factory('AdminActionsFactory', ['baseServiceUrl','$http', function(baseServi
 			method: 'GET',
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
+			},			
+			params:{
+				pagesize: 1000,
+				sortBy: 'Name'
 			}
 		};
 		$http(requestObject)
@@ -226,6 +230,10 @@ app.factory('AdminActionsFactory', ['baseServiceUrl','$http', function(baseServi
 			method: 'GET',
 			headers: {
 				'Authorization': 'Bearer ' + sessionStorage.loginToken
+			},
+			params:{
+				pagesize: 1000,
+				sortBy: 'Name'
 			}
 		};
 		$http(requestObject)
