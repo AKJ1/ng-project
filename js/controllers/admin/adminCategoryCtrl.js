@@ -18,7 +18,7 @@ app.controller('adminCategoryCtrl', ['$scope', '$location', 'AdminActionsFactory
 	$scope.editCategory = function(category, newName){
 		AdminActionsFactory.editCategory(function(response){
 			console.log(response);
-		}, newName, category.id);
+		}, category.id, newName);
 	};
 	$scope.filter();
 }]);

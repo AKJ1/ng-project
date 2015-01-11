@@ -2,7 +2,7 @@
 	<div class="add-category">
 		<label for="">New category</label>
 		<input type="text" placeholder="Create new category" class="form-control" ng-model="newcategory">
-		<button type="button" class="btn btn-primary" ng-click="createcategory(newcategory)"> Create! </button>
+		<button type="button" class="btn btn-primary" ng-click="createCategory(newcategory)"> Create! </button>
 	</div>
 	<div>
 		<label for="">category</label>
@@ -10,8 +10,8 @@
 		</select>
 		<label for="">New Name</label>
 		<input class="form-control" type="text" ng-model="newName">
-		<button type="button" class="btn btn-primary" ng-click="editcategory(selectedcategory,newName)">Edit! </button>
-		<button type="button" class="btn btn-danger" ng-click="deletecategory(selectedcategory)" > Delete! </button>
+		<button type="button" class="btn btn-primary" ng-click="editCategory(selectedcategory,newName)">Edit! </button>
+		<button type="button" class="btn btn-danger" ng-click="deleteCategory(selectedcategory)" > Delete! </button>
 	</div>		
 	
 </div>
